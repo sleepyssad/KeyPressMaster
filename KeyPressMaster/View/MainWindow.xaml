@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyPressMaster"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Height="500"
+        Width="400"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        BorderThickness="0"
+        ResizeMode="NoResize">
+    
+    <Window.Background>
+        <SolidColorBrush Opacity="0" Color="White"/>
+    </Window.Background>
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="65"/>
+    </WindowChrome.WindowChrome>
+
+
+    <Border Background="{DynamicResource Main}"
+            BorderBrush="{DynamicResource Stroke.100}"
+            BorderThickness="1"
+            CornerRadius="20">
+        <StackPanel Margin="0,110,0,0">
+            <Button Content="Blue" Click="Button_Click"/>
+            <Button Content="Violet" Click="Button_Click"/>
+            <Button Content="Orange" Click="Button_Click"/>
+            <Button Content="White" Click="Button_Click"/>
+            <Button Content="Black" Click="Button_Click"/>
+
+        </StackPanel>
+    </Border>
+
+     
 </Window>

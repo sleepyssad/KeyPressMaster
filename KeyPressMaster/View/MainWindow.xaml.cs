@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KeyPressMaster.Model.Enums;
+using KeyPressMaster.Resources;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -24,9 +26,17 @@ namespace KeyPressMaster.View
 {
     public partial class MainWindow : Window
     {
+        
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+    
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThemeManager.Update((AppTheme)Enum.Parse(typeof(AppTheme), (sender as Button).Content.ToString(), true));
         }
     }
 }
