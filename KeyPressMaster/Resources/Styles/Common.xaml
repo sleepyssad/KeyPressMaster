@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:control="clr-namespace:KeyPressMaster.View.Controls">
+    
+    <Style TargetType="Rectangle">
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+    </Style>
+
+    <Style TargetType="control:ExtendButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="control:ExtendButton">
+                    <Grid x:Name="MainGrid">
+                        <Border x:Name="Inactive" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Label x:Name="LabelInactive"  Content="{TemplateBinding Content}" 
+                                                       FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}"
+                                                       FontFamily="{TemplateBinding FontFamily}" Foreground="{TemplateBinding Foreground}"/>
+                                <Grid x:Name="SeparationInactive" Width="{TemplateBinding Separation}"/>
+                                <Rectangle x:Name="IconInactive" Fill="{TemplateBinding IconColor}" Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}">
+                                    <Rectangle.OpacityMask>
+                                        <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource TemplatedParent},Path=IconSource}"/>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="Active" Background="{TemplateBinding BackgroundHover}" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Label x:Name="LabelActive"  Content="{TemplateBinding Content}" 
+                                                       FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}"
+                                                       FontFamily="{TemplateBinding FontFamily}" Foreground="{TemplateBinding ForegroundHover}"/>
+                                <Grid x:Name="SeparationActive" Width="{TemplateBinding Separation}"/>
+                                <Rectangle x:Name="IconActive" Fill="{TemplateBinding IconColorHover}" Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}">
+                                    <Rectangle.OpacityMask>
+                                        <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource TemplatedParent},Path=IconSource}"/>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="LabelInactive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="SeparationInactive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LabelActive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="SeparationActive" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Content" Value="">
+                            <Setter TargetName="LabelInactive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="SeparationInactive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LabelActive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="SeparationActive" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IconSource" Value="{x:Null}">
+                            <Setter TargetName="IconInactive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="SeparationInactive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="IconActive" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="SeparationActive" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Disabled" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Setter TargetName="MainGrid" Property="Opacity" Value=".5"/>
+                            <Setter TargetName="MainGrid" Property="IsHitTestVisible" Value="false"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="MainGrid" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="control:ExtendButton.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="Inactive" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                    <DoubleAnimation Storyboard.TargetName="Active" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="control:ExtendButton.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="Inactive" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                    <DoubleAnimation Storyboard.TargetName="Active" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyPressMaster"
+        xmlns:control="clr-namespace:KeyPressMaster.View.Controls"
         mc:Ignorable="d"
         Height="500"
         Width="400"
@@ -25,14 +26,29 @@
             BorderBrush="{DynamicResource Stroke.100}"
             BorderThickness="1"
             CornerRadius="20">
-        <StackPanel Margin="0,110,0,0">
-            <Button Content="Blue" Click="Button_Click"/>
-            <Button Content="Violet" Click="Button_Click"/>
-            <Button Content="Orange" Click="Button_Click"/>
-            <Button Content="White" Click="Button_Click"/>
-            <Button Content="Black" Click="Button_Click"/>
-
-        </StackPanel>
+        <Grid>
+         
+            <control:ExtendButton Background="Green" BackgroundHover="Lavender" ForegroundHover="Black" IconColorHover="Black" Content="1" Foreground="White" 
+                                  IconSize="15" Separation="20"  IconColor="White"
+                                  CornerRadius="25" Width="200" Height="50"
+                                  Click="Button_Click">
+                
+            </control:ExtendButton>
+            <Grid VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Blue" Click="Button_Click"/>
+                <Button Grid.Column="1" Content="Violet" Click="Button_Click"/>
+                <Button Grid.Column="2" Content="Orange" Click="Button_Click"/>
+                <Button Grid.Column="3" Content="White" Click="Button_Click"/>
+                <Button Grid.Column="4" Content="Black" Click="Button_Click"/>
+            </Grid>
+        </Grid>
     </Border>
 
      

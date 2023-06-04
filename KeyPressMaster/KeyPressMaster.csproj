@@ -82,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +97,7 @@
     <Compile Include="Model\Enums\AppTheme.cs" />
     <Compile Include="Resources\ThemeManager.cs" />
     <Compile Include="Storage.cs" />
+    <Compile Include="View\Controls\ExtendButton.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -117,8 +122,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Styles\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="View\Components\" />
+    <Folder Include="View\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\arrow.png" />
