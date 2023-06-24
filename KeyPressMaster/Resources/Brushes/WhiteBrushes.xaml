@@ -2,4 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="Main" Color="#ffffff"/>
     <SolidColorBrush x:Key="Stroke.100" Color="#cccccc"/>
+    <SolidColorBrush x:Key="Text" Color="#000000"/>
+    <SolidColorBrush x:Key="ButtonIcon.Foreground.Default" Color="#cc000000"/>
+    <SolidColorBrush x:Key="ButtonIcon.Foreground.Active" Color="#000000"/>
+    <SolidColorBrush x:Key="ButtonIcon.Background.Default" Color="Transparent"/>
+    <SolidColorBrush x:Key="ButtonIcon.Background.Active" Color="#54000000"/>
 </ResourceDictionary>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyPressMaster"
         xmlns:control="clr-namespace:KeyPressMaster.View.Controls"
+        xmlns:component="clr-namespace:KeyPressMaster.View.Components"
         mc:Ignorable="d"
         Height="500"
         Width="400"
@@ -18,7 +19,7 @@
     </Window.Background>
     
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="65"/>
+        <WindowChrome CaptionHeight="65" CornerRadius="20"/>
     </WindowChrome.WindowChrome>
 
 
@@ -27,14 +28,23 @@
             BorderThickness="1"
             CornerRadius="20">
         <Grid>
-         
-            <control:ExtendButton Background="Green" BackgroundHover="Lavender" ForegroundHover="Black" IconColorHover="Black" Content="1" Foreground="White" 
-                                  IconSize="15" Separation="20"  IconColor="White"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <component:Header/>
+
+            <control:ExtendButton Grid.Row="1" Background="#30EC4B3C" BackgroundHover="#EC4B3C" ForegroundHover="White" IconColorHover="White" Content="1" Foreground="#EC4B3C" 
+                                  IconSize="15" Separation="20"  IconColor="#EC4B3C"
                                   CornerRadius="25" Width="200" Height="50"
-                                  Click="Button_Click">
+                            
+                                  IconSource="pack://application:,,,/Assets/bin.png"
+                                 >
                 
             </control:ExtendButton>
-            <Grid VerticalAlignment="Bottom">
+
+            <Grid VerticalAlignment="Bottom" Grid.Row="1" Margin="10,0,10,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -42,11 +52,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Blue" Click="Button_Click"/>
-                <Button Grid.Column="1" Content="Violet" Click="Button_Click"/>
-                <Button Grid.Column="2" Content="Orange" Click="Button_Click"/>
-                <Button Grid.Column="3" Content="White" Click="Button_Click"/>
-                <Button Grid.Column="4" Content="Black" Click="Button_Click"/>
+                <control:ExtendButton CornerRadius="5,0,0,5" Background="#0079FF" Foreground="Transparent" Grid.Column="0" Height="20" Content="Blue" Click="Button_Click"/>
+                <control:ExtendButton Grid.Column="1" Background="#8B23F2" Foreground="Transparent" Height="20" Content="Violet" Click="Button_Click"/>
+                <control:ExtendButton Grid.Column="2" Background="#F26E23" Foreground="Transparent" Height="20" Content="Orange" Click="Button_Click"/>
+                <control:ExtendButton Grid.Column="3" Background="#ffffff" Foreground="Transparent" Height="20" Content="White" Click="Button_Click"/>
+                <control:ExtendButton CornerRadius="0,5,5,0" Background="#000000" Foreground="Transparent" Grid.Column="4" Height="20" Content="Black" Click="Button_Click"/>
             </Grid>
         </Grid>
     </Border>
