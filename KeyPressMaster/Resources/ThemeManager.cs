@@ -1,5 +1,4 @@
 ﻿using KeyPressMaster.Model.Enums;
-using KeyPressMaster.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,10 +44,10 @@ namespace KeyPressMaster.Resources
 
                 SaveToStorage(theme);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }   
+            }
         }
 
         public static void SaveToStorage(AppTheme theme)

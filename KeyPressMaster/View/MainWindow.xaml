@@ -13,11 +13,11 @@
         AllowsTransparency="True"
         BorderThickness="0"
         ResizeMode="NoResize">
-    
+
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>
     </Window.Background>
-    
+
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="65" CornerRadius="20"/>
     </WindowChrome.WindowChrome>
@@ -41,7 +41,7 @@
                             
                                   IconSource="pack://application:,,,/Assets/bin.png"
                                  >
-                
+
             </control:ExtendButton>
 
             <Grid VerticalAlignment="Bottom" Grid.Row="1" Margin="10,0,10,5">
@@ -61,5 +61,5 @@
         </Grid>
     </Border>
 
-     
+
 </Window>

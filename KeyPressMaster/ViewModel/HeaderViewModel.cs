@@ -14,7 +14,7 @@ namespace KeyPressMaster.ViewModel
 
         public HeaderViewModel()
         {
-            name = "hello";
+            Name = "Hello";
         }
     }
 }
