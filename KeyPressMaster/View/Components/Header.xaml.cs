@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeyPressMaster.View.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,11 @@ using System.Windows.Shapes;
 
 namespace KeyPressMaster.View.Components
 {
-    /// <summary>
-    /// Interaction logic for Header.xaml
-    /// </summary>
     public partial class Header : UserControl
     {
         public Header()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }

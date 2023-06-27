@@ -10,6 +10,7 @@ using System.Windows;
 
 namespace KeyPressMaster
 {
+    
     public partial class App : Application
     {
         public App() : base()
@@ -20,7 +21,7 @@ namespace KeyPressMaster
         private void Current_Startup(object sender, StartupEventArgs e)
         {
             // load theme
-          
+
             if (Storage.Default.CurrentTheme != AppTheme.Blue)
             {
                 ThemeManager.Update(Storage.Default.CurrentTheme);
