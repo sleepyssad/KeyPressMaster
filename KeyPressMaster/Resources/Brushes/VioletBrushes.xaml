@@ -7,4 +7,6 @@
     <SolidColorBrush x:Key="ButtonIcon.Foreground.Active" Color="#ffffff"/>
     <SolidColorBrush x:Key="ButtonIcon.Background.Default" Color="Transparent"/>
     <SolidColorBrush x:Key="ButtonIcon.Background.Active" Color="#54ffffff"/>
+    <SolidColorBrush x:Key="Backdrop" Color="#90000000"/>
+    <SolidColorBrush x:Key="Modal" Color="#ffffff"/>
 </ResourceDictionary>

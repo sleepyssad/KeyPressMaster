@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeyPressMaster.View.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace KeyPressMaster.View.Components
     {
         public Header()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }

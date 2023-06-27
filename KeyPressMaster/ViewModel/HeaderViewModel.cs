@@ -1,20 +1,27 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace KeyPressMaster.ViewModel
 {
     public partial class HeaderViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private string name;
+        public ICommand CloseCommand { get; set; }
 
         public HeaderViewModel()
         {
-            Name = "Hello";
+            CloseCommand = new RelayCommand(Close);
+        }
+
+        void Close()
+        {
+            App.Current.MainWindow.Close();
         }
     }
 }

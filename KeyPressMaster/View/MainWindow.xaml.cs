@@ -1,5 +1,8 @@
-﻿using KeyPressMaster.Model.Enums;
+﻿using KeyPressMaster.Controllers;
+using KeyPressMaster.Model;
+using KeyPressMaster.Model.Enums;
 using KeyPressMaster.Resources;
+using KeyPressMaster.View.Controls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,7 +35,6 @@ namespace KeyPressMaster.View
         {
             InitializeComponent();
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
