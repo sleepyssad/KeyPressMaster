@@ -34,14 +34,7 @@
                     <control:ExtendButton Style="{DynamicResource ButtonIcon}" IconSource="pack://application:,,,/Assets/more.png"/>
                 </control:ButtonContext.Button>
                 <control:ButtonContext.ModalContent>
-                    <Grid Width="250" Height="250">
-                        <StackPanel>
-                            <StackPanel Margin="15">
-                                <TextBlock Text="Interface theme" FontSize="18" FontWeight="Medium"/>
-                                <TextBlock Text="Select color or use system theme" FontSize="15" FontWeight="Thin" Margin="0,-3,0,0"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Grid>
+                    <local:MoreContent/>
                 </control:ButtonContext.ModalContent>
             </control:ButtonContext>
 
