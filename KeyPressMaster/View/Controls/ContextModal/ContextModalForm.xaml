@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:KeyPressMaster.View.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-   
 
-    <Grid x:Name="MainForm" Visibility="Collapsed" WindowChrome.IsHitTestVisibleInChrome="True">
+
+    <Grid x:Name="MainForm" Visibility="Collapsed" WindowChrome.IsHitTestVisibleInChrome="True"  >
         <Border Background="{DynamicResource Backdrop}" CornerRadius="20" MouseDown="BackMouseDown"/>
         <Border x:Name="ModalBorder" CornerRadius="8" Background="{DynamicResource Modal}" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Border.RenderTransform>

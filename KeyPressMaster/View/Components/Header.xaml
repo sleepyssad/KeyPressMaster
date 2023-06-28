@@ -28,7 +28,6 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2">
-
             <control:ButtonContext ModalPoint="58,63" AnimationPoint="1,0" ModalHorizontalAlignment="Right" >
                 <control:ButtonContext.Button>
                     <control:ExtendButton Style="{DynamicResource ButtonIcon}" IconSource="pack://application:,,,/Assets/more.png"/>
@@ -37,9 +36,6 @@
                     <local:MoreContent/>
                 </control:ButtonContext.ModalContent>
             </control:ButtonContext>
-
-
-
 
             <control:ExtendButton Style="{DynamicResource ButtonIcon}" IconSource="pack://application:,,,/Assets/close.png" Command="{Binding CloseCommand}"/>
         </StackPanel>

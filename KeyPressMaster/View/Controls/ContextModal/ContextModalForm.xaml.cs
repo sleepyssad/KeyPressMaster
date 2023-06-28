@@ -6,11 +6,18 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Media;
+using System.Runtime.InteropServices;
 
 namespace KeyPressMaster.View.Controls
 {
     public partial class ContextModalForm : UserControl
     {
+        private const int WM_NCLBUTTONDOWN = 0x00A1;
+        private const int HTCAPTION = 0x0002;
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
         public ContextModalForm()
         {
             InitializeComponent();
@@ -44,7 +51,6 @@ namespace KeyPressMaster.View.Controls
 
                 ModalBorder.Margin = thickness;
 
-              //  ModalBorder.Margin = new Thickness(param.X, param.Y, 0, 0);
                 ModalContent.Content = param.Content;
                 ModalBorder.RenderTransformOrigin = param.RenderTransformOrigin;
 
@@ -61,6 +67,15 @@ namespace KeyPressMaster.View.Controls
         private void BackMouseDown(object sender, MouseButtonEventArgs e)
         {
             AppController.instance.ContextModal.Close();
+
+            if (e.GetPosition(this).Y <= 65)
+            {
+                if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
+                {
+                    IntPtr hwnd = new System.Windows.Interop.WindowInteropHelper(App.Current.MainWindow).Handle;
+                    SendMessage(hwnd, WM_NCLBUTTONDOWN, (IntPtr)HTCAPTION, IntPtr.Zero);
+                }
+            }
         }
     }
 }
