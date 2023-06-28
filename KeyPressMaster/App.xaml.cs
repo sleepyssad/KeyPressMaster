@@ -1,5 +1,7 @@
-﻿using KeyPressMaster.Model.Enums;
+﻿using KeyPressMaster.Controllers;
+using KeyPressMaster.Model.Enums;
 using KeyPressMaster.Resources;
+using KeyPressMaster.View.Components;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,6 +18,8 @@ namespace KeyPressMaster
         public App() : base()
         {
             App.Current.Startup += Current_Startup;
+
+            AppController.instance.Router.Route(new Presets());
         }
 
         private void Current_Startup(object sender, StartupEventArgs e)

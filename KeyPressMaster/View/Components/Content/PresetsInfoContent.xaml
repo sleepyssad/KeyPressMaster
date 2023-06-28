@@ -9,13 +9,13 @@
     <StackPanel Margin="15" MaxWidth="200">
         <StackPanel.Resources>
             <Style TargetType="TextBlock">
-                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontSize" Value="15"/>
                 <Setter Property="TextWrapping" Value="Wrap"/>
                 <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
-                <Setter Property="LineHeight" Value="16"/>
-                <Setter Property="Margin" Value="0,3,0,3"/>
+                <Setter Property="LineHeight" Value="15"/>
+                <Setter Property="Margin" Value="0,5,0,5"/>
                 <Setter Property="FontWeight" Value="Medium"/>
-                <Setter Property="Opacity" Value=".5"/>
+                <Setter Property="Opacity" Value=".8"/>
             </Style>
         </StackPanel.Resources>
         <TextBlock>Here you can create and manage presets.</TextBlock>

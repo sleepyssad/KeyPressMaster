@@ -13,7 +13,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="control:ExtendButton">
-                    <Grid x:Name="MainGrid">
+                    <Grid x:Name="MainGrid" FlowDirection="{TemplateBinding FlowDirection}">
                         <Border x:Name="Inactive" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 <Label x:Name="LabelInactive"  Content="{TemplateBinding Content}" 
@@ -71,7 +71,7 @@
                         <EventTrigger RoutedEvent="control:ExtendButton.MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="Inactive" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                    <DoubleAnimation Storyboard.TargetName="Inactive" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
                                     <DoubleAnimation Storyboard.TargetName="Active" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
                                 </Storyboard>
                             </BeginStoryboard>

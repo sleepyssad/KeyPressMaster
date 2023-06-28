@@ -36,7 +36,7 @@
 
                 <component:Header/>
 
-                <component:Presets Grid.Row="1"/>
+                <component:MainPageRouter Grid.Row="1"/>
             </Grid>
         </Border>
 

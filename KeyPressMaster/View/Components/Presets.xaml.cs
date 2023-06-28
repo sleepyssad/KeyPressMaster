@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeyPressMaster.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace KeyPressMaster.View.Components
         public Presets()
         {
             InitializeComponent();
+        }
+
+        private void ExtendButton_Click(object sender, RoutedEventArgs e)
+        {
+            AppController.instance.Router.Route(new Header());
         }
     }
 }

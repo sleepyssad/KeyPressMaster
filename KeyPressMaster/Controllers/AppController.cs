@@ -1,5 +1,6 @@
 ﻿using KeyPressMaster.Contracts.Services;
 using KeyPressMaster.Services;
+using KeyPressMaster.View.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,12 @@ namespace KeyPressMaster.Controllers
 
         public IContextModalService ContextModal;
 
+        public IRouterService Router;
+
         public AppController()
         {
             ContextModal = new ContextModalService();
+            Router = new RouterService();
         }
 
     }
