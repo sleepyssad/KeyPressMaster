@@ -1,5 +1,6 @@
 ﻿using KeyPressMaster.Controllers;
 using KeyPressMaster.Model;
+using KeyPressMaster.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,18 +43,11 @@ namespace KeyPressMaster.View.Controls
             set { SetValue(ModalContentProperty, value); }
         }
 
-        public static readonly DependencyProperty ModalCoordinateXProperty = DependencyProperty.Register("ModalCoordinateX", typeof(double), typeof(ButtonContext), new PropertyMetadata((double)0));
-        public double ModalCoordinateX
+        public static readonly DependencyProperty ModalPointProperty = DependencyProperty.Register("ModalPoint", typeof(Point), typeof(ButtonContext), new PropertyMetadata(new Point(0, 0)));
+        public Point ModalPoint
         {
-            get { return (double)GetValue(ModalCoordinateXProperty); }
-            set { SetValue(ModalCoordinateXProperty, value); }
-        }
-
-        public static readonly DependencyProperty ModalCoordinateYProperty = DependencyProperty.Register("ModalCoordinateY", typeof(double), typeof(ButtonContext), new PropertyMetadata((double)0));
-        public double ModalCoordinateY
-        {
-            get { return (double)GetValue(ModalCoordinateYProperty); }
-            set { SetValue(ModalCoordinateYProperty, value); }
+            get { return (Point)GetValue(ModalPointProperty); }
+            set { SetValue(ModalPointProperty, value); }
         }
 
         public static readonly DependencyProperty AnimationPointProperty = DependencyProperty.Register("AnimationPoint", typeof(Point), typeof(ButtonContext), new PropertyMetadata(new Point(1, 0)));
@@ -62,8 +56,6 @@ namespace KeyPressMaster.View.Controls
             get { return (Point)GetValue(AnimationPointProperty); }
             set { SetValue(AnimationPointProperty, value); }
         }
-
-
 
         Brush defaultBackground;
         Brush activeBackground;
@@ -83,22 +75,32 @@ namespace KeyPressMaster.View.Controls
         private void UserControlLoaded(object sender, RoutedEventArgs e)
         {
             Button.Click += ButtonClick;
-            defaultBackground = Button.Background;
-            activeBackground = Button.BackgroundHover;
+            ThemeManager.Changed += ThemeManager_Changed;
+        }
+
+        private void ThemeManager_Changed(object? sender, EventArgs e)
+        {
+            if (IsOpened)
+            {
+                Button.Background = Button.BackgroundHover; 
+            }
         }
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
+            defaultBackground = Button.Background;
+            activeBackground = Button.BackgroundHover;
+
             IsOpened = !IsOpened;
 
             Button.Background = IsOpened ? activeBackground : defaultBackground;
 
-            if(IsOpened)
+            if (IsOpened)
             {
                 AppController.instance.ContextModal.Open(new ContextModalParams
                 {
-                    X = ModalCoordinateX, 
-                    Y = ModalCoordinateY,
+                    X = ModalPoint.X,
+                    Y = ModalPoint.Y,
                     Content = ModalContent,
                     RenderTransformOrigin = AnimationPoint
                 });

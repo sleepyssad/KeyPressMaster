@@ -28,9 +28,9 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2">
-            
-                <control:ButtonContext x:Name="rsdsdd" ModalCoordinateX="100" ModalCoordinateY="60" AnimationPoint="1,0">
-                    <control:ButtonContext.Button>
+
+            <control:ButtonContext ModalPoint="100,60" AnimationPoint="1,-1">
+                <control:ButtonContext.Button>
                     <control:ExtendButton Style="{DynamicResource ButtonIcon}" IconSource="pack://application:,,,/Assets/more.png"/>
                 </control:ButtonContext.Button>
                 <control:ButtonContext.ModalContent>

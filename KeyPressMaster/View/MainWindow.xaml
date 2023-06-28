@@ -36,22 +36,7 @@
 
                 <component:Header/>
 
-                <Grid VerticalAlignment="Bottom" Grid.Row="1" Margin="10,0,10,5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <control:ExtendButton CornerRadius="5,0,0,5" Background="#0079FF" Foreground="Transparent" Grid.Column="0" Height="20" Content="Blue" Click="Button_Click"/>
-                    <control:ExtendButton Grid.Column="1" Background="#8B23F2" Foreground="Transparent" Height="20" Content="Violet" Click="Button_Click"/>
-                    <control:ExtendButton x:Name="dsdsd" Grid.Column="2" Background="#F26E23" Foreground="Transparent" Height="20" Content="Orange" Click="Button_Click"/>
-                    <control:ExtendButton Grid.Column="3" Background="#ffffff" Foreground="Transparent" Height="20" Content="White" Click="Button_Click"/>
-                    <control:ExtendButton CornerRadius="0,5,5,0" Background="#000000" Foreground="Transparent" Grid.Column="4" Height="20" Content="Black" Click="Button_Click"/>
-                </Grid>
-
-
+                <component:Presets Grid.Row="1"/>
             </Grid>
         </Border>
 

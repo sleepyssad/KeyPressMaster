@@ -11,6 +11,8 @@ namespace KeyPressMaster.Resources
 {
     public static class ThemeManager
     {
+        public static event EventHandler Changed;
+
         private static string GetFileName(string source)
         {
             try
@@ -47,6 +49,10 @@ namespace KeyPressMaster.Resources
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Changed?.Invoke(theme, EventArgs.Empty);
             }
         }
 

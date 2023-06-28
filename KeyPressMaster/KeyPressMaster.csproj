@@ -10,7 +10,7 @@
   <ItemGroup>
     <None Remove="Assets\arrow.png" />
     <None Remove="Assets\bin.png" />
-    <None Remove="Assets\ckeck.png" />
+    <None Remove="Assets\check.png" />
     <None Remove="Assets\close.png" />
     <None Remove="Assets\img-failed.png" />
     <None Remove="Assets\info.png" />
@@ -26,17 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="View\Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Assets\arrow.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\bin.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\ckeck.png">
+    <Resource Include="Assets\check.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\close.png">
