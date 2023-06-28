@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock FontSize="21" Foreground="{DynamicResource Text}" FontWeight="Medium" VerticalAlignment="Center">My presets</TextBlock>
+        
         <control:ButtonContext ModalPoint="135,110" AnimationPoint="2,0" VerticalAlignment="Center" HorizontalAlignment="Right">
             <control:ButtonContext.Button>
                 <control:ExtendButton Style="{DynamicResource ButtonIcon}" IconSize="25" IconSource="pack://application:,,,/Assets/info.png"/>
