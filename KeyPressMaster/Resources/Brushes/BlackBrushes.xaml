@@ -7,4 +7,14 @@
     <SolidColorBrush x:Key="ButtonIcon.Foreground.Active" Color="#ffffff"/>
     <SolidColorBrush x:Key="ButtonIcon.Background.Default" Color="Transparent"/>
     <SolidColorBrush x:Key="ButtonIcon.Background.Active" Color="#54ffffff"/>
+    <SolidColorBrush x:Key="Backdrop" Color="#90000000"/>
+    <SolidColorBrush x:Key="Modal" Color="#ffffff"/>
+    <SolidColorBrush x:Key="Modal.Line" Color="#25000000"/>
+    <SolidColorBrush x:Key="Modal.CriticalButton.Foreground.Default" Color="#EC4B3C"/>
+    <SolidColorBrush x:Key="Modal.CriticalButton.Foreground.Active" Color="#ffffff"/>
+    <SolidColorBrush x:Key="Modal.CriticalButton.Background.Default" Color="#25EC4B3C"/>
+    <SolidColorBrush x:Key="Modal.CriticalButton.Background.Active" Color="#EC4B3C"/>
+    <SolidColorBrush x:Key="CheckBox.Fill.Default" Color="Silver"/>
+    <SolidColorBrush x:Key="CheckBox.Fill.Active" Color="#000000"/>
+    <SolidColorBrush x:Key="CheckBox.Bar" Color="White"/>
 </ResourceDictionary>

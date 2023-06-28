@@ -7,7 +7,7 @@
         <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
     </Style>
 
-  
+
     <Style x:Key="ButtonBase" TargetType="control:ExtendButton">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Template">
@@ -104,4 +104,164 @@
 
     <Style TargetType="control:ExtendButton" BasedOn="{StaticResource ButtonBase}"/>
 
+    <Style x:Key="CheckBoxBase" TargetType="CheckBox">
+        <Setter Property="Width" Value="56"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Border Width="{TemplateBinding Width}" Background="{DynamicResource CheckBox.Fill.Default}" Height="{TemplateBinding Height}" CornerRadius="16" >
+                        <Grid>
+                            <Border x:Name="Border" CornerRadius="14" Background="{DynamicResource CheckBox.Fill.Active}" Opacity="0"/>
+                            <Border x:Name="BorderHover" Background="black" Opacity="0" CornerRadius="14"/>
+                            <Border Padding="4">
+                                <Ellipse x:Name="Ellipse" Fill="{DynamicResource CheckBox.Bar}" Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=ActualHeight}" HorizontalAlignment="Left"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.2" Storyboard.TargetName="Ellipse" Storyboard.TargetProperty="Margin" To="28,0,0,0">
+                                            <ThicknessAnimation.EasingFunction>
+                                                <PowerEase Power="6" />
+                                            </ThicknessAnimation.EasingFunction>
+                                        </ThicknessAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.2" Storyboard.TargetName="Ellipse" Storyboard.TargetProperty="Margin" To="0,0,0,0">
+                                            <ThicknessAnimation.EasingFunction>
+                                                <PowerEase Power="6" />
+                                            </ThicknessAnimation.EasingFunction>
+                                        </ThicknessAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="CheckBox.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="BorderHover"
+                                                                         Storyboard.TargetProperty="Opacity" To=".2" Duration="0:0:0.1">
+
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="CheckBox.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="BorderHover"
+                                                                         Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1">
+
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="CheckBox" BasedOn="{StaticResource CheckBoxBase}"/>
+
+    <Style x:Key="ThemeRadioButton" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid Width="35" Height="35" ClipToBounds="False">
+                        <Ellipse Fill="{TemplateBinding Background}"/>
+                        <Ellipse x:Name="EllipseHover" Fill="black" Opacity="0"/>
+                        <Border x:Name="Ellipse" Margin="-5" CornerRadius="100" BorderThickness="3" BorderBrush="{DynamicResource Modal}"  Background="{TemplateBinding Background}"
+                                                    Opacity="0" Width="24" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="3">
+                            <control:Icon Source="pack://application:,,,/Assets/check.png" Fill="{DynamicResource Modal}"/>
+                            <Border.RenderTransform>
+                                <ScaleTransform x:Name="ScaleTransform" ScaleX="0.5" ScaleY="0.5"/>
+                            </Border.RenderTransform>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Ellipse"
+                                                                             Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.15"/>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                                                             Storyboard.TargetProperty="ScaleX"
+                                                                             To="1" Duration="0:0:0.5">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseOut" Oscillations="1"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" 
+                                                                             Storyboard.TargetProperty="ScaleY"
+                                                                             To="1" Duration="0:0:0.5">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseOut" Oscillations="1"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Ellipse"
+                                                                             Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.15"/>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                                                             Storyboard.TargetProperty="ScaleX"
+                                                                             To=".5" Duration="0:0:0.5">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseOut" Oscillations="1"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" 
+                                                                             Storyboard.TargetProperty="ScaleY"
+                                                                             To=".5" Duration="0:0:0.5">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseOut" Oscillations="1"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="RadioButton.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="EllipseHover"
+                                                                         Storyboard.TargetProperty="Opacity" To=".1" Duration="0:0:0">
+
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="RadioButton.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="EllipseHover"
+                                                                         Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.15">
+
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    
 </ResourceDictionary>

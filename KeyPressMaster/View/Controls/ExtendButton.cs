@@ -46,7 +46,7 @@ namespace KeyPressMaster.View.Controls
         public double IconSize
         {
             get { return (double)GetValue(IconSizeProperty); }
-            set { SetValue(IconSizeProperty, value);}
+            set { SetValue(IconSizeProperty, value); }
         }
 
         public static readonly DependencyProperty SeparationProperty = DependencyProperty.Register("Separation", typeof(double), typeof(ExtendButton), new PropertyMetadata((double)0));
@@ -72,7 +72,7 @@ namespace KeyPressMaster.View.Controls
 
         public ExtendButton()
         {
-          
+
         }
 
 

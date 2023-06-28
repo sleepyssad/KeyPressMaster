@@ -19,5 +19,18 @@ namespace KeyPressMaster
                 Save();
             }
         }
+
+        [global::System.Configuration.UserScopedSetting()]
+        [global::System.Diagnostics.DebuggerNonUserCode()]
+        [global::System.Configuration.DefaultSettingValue("")]
+        public bool AutoRun
+        {
+            get => ((bool)(this[nameof(AutoRun)]));
+            set
+            {
+                this[nameof(AutoRun)] = value;
+                Save();
+            }
+        }
     }
 }

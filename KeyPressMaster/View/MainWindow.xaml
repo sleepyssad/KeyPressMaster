@@ -13,53 +13,44 @@
         AllowsTransparency="True"
         BorderThickness="0"
         ResizeMode="NoResize">
-    
+
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>
     </Window.Background>
-    
+
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="65" CornerRadius="20"/>
     </WindowChrome.WindowChrome>
 
 
-    <Border Background="{DynamicResource Main}"
+    <Grid>
+        <Border Background="{DynamicResource Main}"
             BorderBrush="{DynamicResource Stroke.100}"
             BorderThickness="1"
             CornerRadius="20">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="65"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <component:Header/>
+                <component:Header/>
 
-            <control:ExtendButton Grid.Row="1" Background="#30EC4B3C" BackgroundHover="#EC4B3C" ForegroundHover="White" IconColorHover="White" Content="1" Foreground="#EC4B3C" 
+                <component:Presets Grid.Row="1"/>
+            </Grid>
+        </Border>
+
+        <control:ContextModalForm/>
+
+    </Grid>
+   
+
+</Window>
+
+
+<!--<control:ExtendButton Background="#30EC4B3C" BackgroundHover="#EC4B3C" ForegroundHover="White" IconColorHover="White" Content="1" Foreground="#EC4B3C" 
                                   IconSize="15" Separation="20"  IconColor="#EC4B3C"
                                   CornerRadius="25" Width="200" Height="50"
-                            
-                                  IconSource="pack://application:,,,/Assets/bin.png"
-                                 >
-                
-            </control:ExtendButton>
+                                  IconSource="pack://application:,,,/Assets/bin.png">
 
-            <Grid VerticalAlignment="Bottom" Grid.Row="1" Margin="10,0,10,5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <control:ExtendButton CornerRadius="5,0,0,5" Background="#0079FF" Foreground="Transparent" Grid.Column="0" Height="20" Content="Blue" Click="Button_Click"/>
-                <control:ExtendButton Grid.Column="1" Background="#8B23F2" Foreground="Transparent" Height="20" Content="Violet" Click="Button_Click"/>
-                <control:ExtendButton Grid.Column="2" Background="#F26E23" Foreground="Transparent" Height="20" Content="Orange" Click="Button_Click"/>
-                <control:ExtendButton Grid.Column="3" Background="#ffffff" Foreground="Transparent" Height="20" Content="White" Click="Button_Click"/>
-                <control:ExtendButton CornerRadius="0,5,5,0" Background="#000000" Foreground="Transparent" Grid.Column="4" Height="20" Content="Black" Click="Button_Click"/>
-            </Grid>
-        </Grid>
-    </Border>
-
-     
-</Window>
+</control:ExtendButton>-->

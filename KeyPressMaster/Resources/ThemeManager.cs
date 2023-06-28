@@ -1,5 +1,4 @@
 ﻿using KeyPressMaster.Model.Enums;
-using KeyPressMaster.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +11,8 @@ namespace KeyPressMaster.Resources
 {
     public static class ThemeManager
     {
+        public static event EventHandler Changed;
+
         private static string GetFileName(string source)
         {
             try
@@ -45,10 +46,14 @@ namespace KeyPressMaster.Resources
 
                 SaveToStorage(theme);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }   
+            }
+            finally
+            {
+                Changed?.Invoke(theme, EventArgs.Empty);
+            }
         }
 
         public static void SaveToStorage(AppTheme theme)
