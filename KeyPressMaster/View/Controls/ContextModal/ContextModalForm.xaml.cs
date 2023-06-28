@@ -25,7 +25,26 @@ namespace KeyPressMaster.View.Controls
 
             if (sender is ContextModalParams param)
             {
-                ModalBorder.Margin = new Thickness(param.X, param.Y, 0, 0);
+                ModalBorder.VerticalAlignment = param.VerticalAlignment;
+                ModalBorder.HorizontalAlignment = param.HorizontalAlignment;
+
+                var thickness = new Thickness();
+                
+                switch (param.VerticalAlignment)
+                {
+                    case VerticalAlignment.Top: thickness.Top = param.Y; break;
+                    case VerticalAlignment.Bottom: thickness.Bottom = param.Y; break;
+                }
+
+                switch (param.HorizontalAlignment)
+                {
+                    case HorizontalAlignment.Left: thickness.Left = param.X; break;
+                    case HorizontalAlignment.Right: thickness.Right = param.X; break;
+                }
+
+                ModalBorder.Margin = thickness;
+
+              //  ModalBorder.Margin = new Thickness(param.X, param.Y, 0, 0);
                 ModalContent.Content = param.Content;
                 ModalBorder.RenderTransformOrigin = param.RenderTransformOrigin;
 

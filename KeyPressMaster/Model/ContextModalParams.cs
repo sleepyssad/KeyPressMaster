@@ -17,5 +17,9 @@ namespace KeyPressMaster.Model
         public Point RenderTransformOrigin { get; set; }
 
         public object Content { get; set; }
+
+        public VerticalAlignment VerticalAlignment { get; set; }
+
+        public HorizontalAlignment HorizontalAlignment { get; set; }
     }
 }

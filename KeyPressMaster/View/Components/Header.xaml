@@ -29,7 +29,7 @@
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2">
 
-            <control:ButtonContext ModalPoint="100,60" AnimationPoint="1,-1">
+            <control:ButtonContext ModalPoint="58,63" AnimationPoint="1,0" ModalHorizontalAlignment="Right" >
                 <control:ButtonContext.Button>
                     <control:ExtendButton Style="{DynamicResource ButtonIcon}" IconSource="pack://application:,,,/Assets/more.png"/>
                 </control:ButtonContext.Button>

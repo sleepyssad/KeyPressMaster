@@ -57,6 +57,20 @@ namespace KeyPressMaster.View.Controls
             set { SetValue(AnimationPointProperty, value); }
         }
 
+        public static readonly DependencyProperty ModalVerticalAlignmentProperty = DependencyProperty.Register("ModalVerticalAlignment", typeof(VerticalAlignment), typeof(ButtonContext), new PropertyMetadata(VerticalAlignment.Top));
+        public VerticalAlignment ModalVerticalAlignment
+        {
+            get { return (VerticalAlignment)GetValue(ModalVerticalAlignmentProperty); }
+            set { SetValue(ModalVerticalAlignmentProperty, value); }
+        }
+
+        public static readonly DependencyProperty ModalHorizontalAlignmentProperty = DependencyProperty.Register("ModalHorizontalAlignment", typeof(HorizontalAlignment), typeof(ButtonContext), new PropertyMetadata(HorizontalAlignment.Left));
+        public HorizontalAlignment ModalHorizontalAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(ModalHorizontalAlignmentProperty); }
+            set { SetValue(ModalHorizontalAlignmentProperty, value); }
+        }
+
         Brush defaultBackground;
         Brush activeBackground;
 
@@ -102,7 +116,9 @@ namespace KeyPressMaster.View.Controls
                     X = ModalPoint.X,
                     Y = ModalPoint.Y,
                     Content = ModalContent,
-                    RenderTransformOrigin = AnimationPoint
+                    RenderTransformOrigin = AnimationPoint,
+                    VerticalAlignment = ModalVerticalAlignment,
+                    HorizontalAlignment = ModalHorizontalAlignment,
                 });
             }
             else
