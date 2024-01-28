@@ -22,6 +22,7 @@ namespace KeyPressMaster
             AppController.instance.Router.Route(new Presets());
         }
 
+
         private void Current_Startup(object sender, StartupEventArgs e)
         {
             // load theme

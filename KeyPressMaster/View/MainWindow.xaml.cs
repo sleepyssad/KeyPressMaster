@@ -2,6 +2,7 @@
 using KeyPressMaster.Model;
 using KeyPressMaster.Model.Enums;
 using KeyPressMaster.Resources;
+using KeyPressMaster.Services;
 using KeyPressMaster.View.Controls;
 using System;
 using System.Collections.Generic;
@@ -27,11 +28,18 @@ using WindowsInput.Native;
 
 namespace KeyPressMaster.View
 {
+
+
     public partial class MainWindow : Window
     {
+       
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+
+        
     }
 }

@@ -1,5 +1,4 @@
-﻿using KeyPressMaster.Contracts.Services;
-using KeyPressMaster.Services;
+﻿using KeyPressMaster.Services;
 using KeyPressMaster.View.Components;
 using System;
 using System.Collections.Generic;
@@ -31,14 +30,17 @@ namespace KeyPressMaster.Controllers
             }
         }
 
-        public IContextModalService ContextModal;
+        public ContextModalService ContextModal;
 
-        public IRouterService Router;
+        public RouterService Router;
+
+        public KeyboardDetectorService KeyboardDetector;
 
         public AppController()
         {
             ContextModal = new ContextModalService();
             Router = new RouterService();
+            KeyboardDetector = new KeyboardDetectorService();
         }
 
     }

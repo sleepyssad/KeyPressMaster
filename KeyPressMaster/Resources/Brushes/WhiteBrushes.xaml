@@ -17,4 +17,7 @@
     <SolidColorBrush x:Key="CheckBox.Fill.Default" Color="Silver"/>
     <SolidColorBrush x:Key="CheckBox.Fill.Active" Color="Black"/>
     <SolidColorBrush x:Key="CheckBox.Bar" Color="White"/>
+    <SolidColorBrush x:Key="KeyTextBox.Text" Color="Black"/>
+    <SolidColorBrush x:Key="KeyTextBox.Border" Color="Black"/>
+    <SolidColorBrush x:Key="KeyTextBox.Fill" Color="#20000000"/>
 </ResourceDictionary>

@@ -1,5 +1,4 @@
-﻿using KeyPressMaster.Contracts.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KeyPressMaster.Services
 {
-    internal class RouterService : IRouterService
+    internal class RouterService
     {
         public object Current { get; private set; }
 

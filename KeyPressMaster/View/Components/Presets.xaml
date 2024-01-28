@@ -25,6 +25,16 @@
             </control:ButtonContext.ModalContent>
         </control:ButtonContext>
 
+        <Grid Grid.Row="1">
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <control:KeyTextBox Height="35" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <control:KeyTextBox Height="35" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </StackPanel>
+           
+            
+        </Grid>
+        
         <control:ExtendButton Grid.Row="2" Background="White" BackgroundHover="#40ffffff" ForegroundHover="White" IconColorHover="White" 
                               Content="Create new preset " Foreground="#0079ff" IconSize="18" FontSize="16" FontWeight="Medium" Separation="5" FlowDirection="LeftToRight"
                               IconColor="#0079ff" CornerRadius="25" Height="50" IconSource="pack://application:,,,/Assets/plus.png" Click="ExtendButton_Click"/>

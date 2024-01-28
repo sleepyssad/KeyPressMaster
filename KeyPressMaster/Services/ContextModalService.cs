@@ -1,5 +1,4 @@
-﻿using KeyPressMaster.Contracts.Services;
-using KeyPressMaster.Model;
+﻿using KeyPressMaster.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace KeyPressMaster.Services
 {
-    internal class ContextModalService : IContextModalService
+    internal class ContextModalService
     {
         public event EventHandler Opened;
         public void Open(ContextModalParams param)

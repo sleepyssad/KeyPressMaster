@@ -23,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
     <PackageReference Include="InputSimulator" Version="1.0.4" />
+    <PackageReference Include="MouseKeyHook" Version="5.7.1" />
   </ItemGroup>
 
   <ItemGroup>
